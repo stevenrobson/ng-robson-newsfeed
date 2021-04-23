@@ -1,0 +1,381 @@
+{
+  "user": {
+    "id": 1,
+    "userId": 4,
+    "firstName": "Steve",
+    "lastName": "Robson",
+    "avatar": "angular",
+    "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
+  },
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "avatar": "moon",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
+    },
+    {
+      "id": 2,
+      "firstName": "Jack",
+      "lastName": "Johnston",
+      "avatar": "sun",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
+    },
+    {
+      "id": 3,
+      "firstName": "Bob",
+      "lastName": "Rossin",
+      "avatar": "easel",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
+    },
+    {
+      "id": 4,
+      "firstName": "Steve",
+      "lastName": "Robson",
+      "avatar": "angular",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
+    },
+    {
+      "id": 5,
+      "firstName": "Sally",
+      "lastName": "Meadows",
+      "avatar": "rainbow",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
+    }
+  ],
+  "feeds": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "02/27/2021 01:49:40 PM",
+      "type": "post",
+      "title": "My first feed!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "date": "01/18/2021 05:13:14 PM",
+      "type": "post",
+      "title": "Accusamus, in ipsam",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "date": "04/22/2021 12:25:21 AM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Jane added Jack as a friend!"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "date": "02/26/2021 02:38:25 PM",
+      "type": "post",
+      "title": "Aliquam dolor obcaecati!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "date": "03/09/2021 09:26:49 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Jane added Bob as a friend!"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "date": "04/21/2021 05:55:19 AM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Jane added Steve as a friend!"
+    },
+    {
+      "id": 7,
+      "userId": 2,
+      "date": "04/17/2021 02:24:19 PM",
+      "type": "post",
+      "title": "Hello World!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "date": "01/18/2021 02:01:00 PM",
+      "type": "post",
+      "title": "Accusamus, in ipsam",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 9,
+      "userId": 2,
+      "date": "03/24/2021 02:24:04 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Jack added Jane as a friend!"
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "date": "03/29/2021 07:47:14 AM",
+      "type": "post",
+      "title": "Aliquam dolor obcaecati!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 11,
+      "userId": 2,
+      "date": "03/26/2021 01:54:35 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Jack added Sally as a friend!"
+    },
+    {
+      "id": 12,
+      "userId": 2,
+      "date": "01/22/2021 06:09:12 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Jack added Bob as a friend!"
+    },
+    {
+      "id": 13,
+      "userId": 3,
+      "date": "02/09/2021 01:13:04 AM",
+      "type": "post",
+      "title": "Cloud 9",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 14,
+      "userId": 3,
+      "date": "02/23/2021 07:06:27 AM",
+      "type": "post",
+      "title": "Accusamus, in ipsam",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 15,
+      "userId": 3,
+      "date": "01/15/2021 11:58:48 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Bob added Jane as a friend!"
+    },
+    {
+      "id": 16,
+      "userId": 3,
+      "date": "04/05/2021 03:29:21 AM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Bob added Steve as a friend!"
+    },
+    {
+      "id": 17,
+      "userId": 3,
+      "date": "01/24/2021 01:41:54 PM",
+      "type": "post",
+      "title": "Aliquam dolor obcaecati!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 18,
+      "userId": 3,
+      "date": "03/09/2021 09:26:07 AM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Bob added Sally as a friend!"
+    },
+    {
+      "id": 19,
+      "userId": 4,
+      "date": "01/30/2021 08:26:56 PM",
+      "type": "post",
+      "title": "Coding is fun!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 20,
+      "userId": 4,
+      "date": "02/01/2021 01:37:41 AM",
+      "type": "post",
+      "title": "Angular, in ipsam",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 21,
+      "userId": 4,
+      "date": "03/05/2021 06:13:00 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Steve added Jane as a friend!"
+    },
+    {
+      "id": 22,
+      "userId": 4,
+      "date": "03/06/2021 09:00:59 PM",
+      "type": "post",
+      "title": "Aliquam dolor obcaecati!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 23,
+      "userId": 4,
+      "date": "04/02/2021 04:51:02 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Steve added Bob as a friend!"
+    },
+    {
+      "id": 24,
+      "userId": 4,
+      "date": "04/05/2021 05:08:24 AM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Steve added Jack as a friend!"
+    },
+    {
+      "id": 25,
+      "userId": 4,
+      "date": "03/15/2021 12:39:32 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Steve added Sally as a friend!"
+    },
+    {
+      "id": 26,
+      "userId": 5,
+      "date": "03/29/2021 07:44:31 AM",
+      "type": "post",
+      "title": "Strawberry Fields...",
+      "image": "",
+      "content": "Lorem ipsum dolor forever, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 27,
+      "userId": 5,
+      "date": "04/20/2021 03:28:20 PM",
+      "type": "post",
+      "title": "Accusamus, in ipsam",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 28,
+      "userId": 5,
+      "date": "01/13/2021 11:25:22 AM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Sally added Bob as a friend!"
+    },
+    {
+      "id": 29,
+      "userId": 5,
+      "date": "01/30/2021 12:24:27 PM",
+      "type": "post",
+      "title": "Aliquam dolor obcaecati!",
+      "image": "",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+    },
+    {
+      "id": 30,
+      "userId": 5,
+      "date": "01/30/2021 09:41:34 PM",
+      "type": "friended",
+      "title": "",
+      "image": "",
+      "content": "Sally added Jane as a friend!"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 1,
+      "feedId": 5,
+      "active": true
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "feedId": 22,
+      "active": true
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "feedId": 30,
+      "active": true
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "feedId": 5,
+      "active": true
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "feedId": 22,
+      "active": true
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "feedId": 30,
+      "active": true
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "feedId": 19,
+      "active": true
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "feedId": 30,
+      "active": true
+    },
+    {
+      "id": 7,
+      "userId": 5,
+      "feedId": 22,
+      "active": true
+    },
+    {
+      "id": 8,
+      "userId": 5,
+      "feedId": 30,
+      "active": true
+    }
+  ]
+}
