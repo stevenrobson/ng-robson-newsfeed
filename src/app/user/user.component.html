@@ -1,0 +1,14 @@
+<p>{{ (user | async)?.firstName }} {{ (user | async)?.lastName }}</p>
+
+<div *ngIf="allUsers | async">
+  <div *ngFor="let user of (allUsers | async)">
+    <div *ngFor="let feed of user.feeds">
+      <app-feed [feed]="feed"></app-feed>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<div *ngFor="let feed of (user | async)?.feeds">
+  <app-feed [feed]="feed"></app-feed>
+</div>

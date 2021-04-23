@@ -1,0 +1,10 @@
+<button type="submit" (click)="selectAllFeeds()">All</button>
+<div *ngFor="let user of allUsers$ | async">
+  <button type="submit" (click)="selectUser(user.id)">
+    {{ user.firstName }}
+  </button>
+</div>
+
+<app-user *ngIf="!showAllFeeds" [user]="selectedUser$"></app-user>
+
+<app-user *ngIf="showAllFeeds" [allUsers]="allUsers$"></app-user>

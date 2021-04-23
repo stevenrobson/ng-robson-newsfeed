@@ -1,0 +1,7 @@
+<div style="border: 1px solid black; margin: 5px; padding: 5px;">
+  <pre>{{ feed?.id }}</pre>
+  <label style="color: red;">{{ feed.title }}</label>
+  <p>{{ feed.content }}</p>
+  <pre>{{ feed.date }}</pre>
+  <div *ngIf="feed.favorite === true" style="color:blueviolet">FAVORITE</div>
+</div>
