@@ -1,12 +1,15 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, mergeMap, tap } from 'rxjs/operators';
+import { map, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { ApiService } from '../services/api.service';
 import { DataService } from '../services/data.service';
 import { Favorite } from '../shared/favorite';
 import { Feed } from '../shared/feed';
 import { User } from '../shared/user';
 import { UserComponent } from '../user/user.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +19,14 @@ import { UserComponent } from '../user/user.component';
 export class DashboardComponent implements OnInit {
   @Output() user?: Observable<User>;
   @Output() allUsers?: Observable<User[]>;
+  @ViewChild('drawer') drawer: MatSidenav;
+
+  isHandset = false;
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
 
   logonUserId: number = 4;
   allFeeds$: Observable<Feed[]>;
@@ -24,12 +35,13 @@ export class DashboardComponent implements OnInit {
   selectedUser$: Observable<User>;
   showAllFeeds = false;
 
-  constructor(private api: ApiService, private data: DataService) {
+  constructor(private api: ApiService, private data: DataService, private breakpointObserver: BreakpointObserver) {
     this.selectUser(this.logonUserId);
     this.initializeGlobals();
     this.allUsers$ = this.data.allUsers$;
     this.allUsers = this.data.allUsers$;
     this.selectedUser$ = this.data.selectedUser$;
+    this.isHandset$.subscribe( handset => this.isHandset = handset);
 
     this.user = this.data.selectedUser$;
   }
@@ -42,6 +54,7 @@ export class DashboardComponent implements OnInit {
   }
 
   selectAllUsers(): void {
+    this.data.clearSelectedUser();
     console.log('selectAllUsers()');
     this.showAllFeeds = true;
     let users: User[];
@@ -77,6 +90,7 @@ export class DashboardComponent implements OnInit {
   }
 
   selectUser(id: number): void {
+    // this.data.clearSelectedUser();
     this.showAllFeeds = false;
 
     let user: User;
@@ -102,6 +116,8 @@ export class DashboardComponent implements OnInit {
         )
       }
     );
+
+    console.log('drawer',this.drawer);
 
   }
 

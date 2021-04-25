@@ -1,10 +1,76 @@
-<button type="submit" (click)="selectAllFeeds()">All</button>
-<div *ngFor="let user of allUsers$ | async">
-  <button type="submit" (click)="selectUser(user.id)">
-    {{ user.firstName }}
+
+<nav class="navbar">
+  <button
+    type="button"
+    class="btn menu"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async"
+  >
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
+  <div
+    class="logo animate"
+    [ngClass]="(isHandset$ | async) ? 'ease-logo-mobile' : 'ease-left'"
+  >
+    Upkey<span>Newsfeed</span>
+  </div>
+</nav>
+
+<div class="container">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar></mat-toolbar>
+    <div class="nav-buttons" [ngClass]="isHandset ? 'mobile' : 'desktop' ">
+      <mat-nav-list *ngFor="let user of allUsers$ | async; let i = index">
+        <!-- Button styling and logic -->
+        <div class="button-action" *ngIf="i === 0">
+          <button
+            mat-stroked-button
+            class="btn all animate pop-in"
+            [ngClass]="showAllFeeds ? 'active' : 'inactive'"
+            (click)="isHandset && drawer.toggle()"
+            (click)="selectAllFeeds()"
+          >
+            All Feeds
+          </button>
+        </div>
+        <div class="button-action">
+          <div
+            class="btn hover-highlight animate"
+            [ngClass]="
+              (selectedUser$ | async)?.id === user.id && !showAllFeeds
+                ? 'active'
+                : '1inactive'
+            "
+            (click)="isHandset && drawer.toggle()"
+            (click)="selectUser(user.id);"
+          >
+            <img
+              class="avatar"
+              src="../../assets/images/{{ user?.firstName | lowercase }}.png"
+              alt=""
+            />
+            <span class="username"
+              >{{ user.firstName }} {{ user.lastName }}</span
+            >
+          </div>
+        </div>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="mat-sidenav-content">
+    <app-user *ngIf="!showAllFeeds" [user]="selectedUser$"></app-user>
+
+    <app-user *ngIf="showAllFeeds" [allUsers]="allUsers$"></app-user>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 </div>
-
-<app-user *ngIf="!showAllFeeds" [user]="selectedUser$"></app-user>
-
-<app-user *ngIf="showAllFeeds" [allUsers]="allUsers$"></app-user>

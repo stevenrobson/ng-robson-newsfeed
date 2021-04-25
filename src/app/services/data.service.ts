@@ -30,6 +30,10 @@ export class DataService {
     return user;
   }
 
+  clearSelectedUser(): void {
+    this.selectedUser.next(undefined);
+  }
+
   setAllUsers(users: User[]): void {
 
     users.forEach(user => {

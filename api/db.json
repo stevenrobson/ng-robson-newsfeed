@@ -4,7 +4,7 @@
     "userId": 4,
     "firstName": "Steve",
     "lastName": "Robson",
-    "avatar": "angular",
+    "avatar": "steve.png",
     "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
   },
   "users": [
@@ -12,35 +12,35 @@
       "id": 1,
       "firstName": "Jane",
       "lastName": "Doe",
-      "avatar": "moon",
+      "avatar": "jane.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 2,
       "firstName": "Jack",
       "lastName": "Johnston",
-      "avatar": "sun",
+      "avatar": "jack.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 3,
       "firstName": "Bob",
       "lastName": "Rossin",
-      "avatar": "easel",
+      "avatar": "bob.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 4,
       "firstName": "Steve",
       "lastName": "Robson",
-      "avatar": "angular",
+      "avatar": "steve.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 5,
       "firstName": "Sally",
       "lastName": "Meadows",
-      "avatar": "rainbow",
+      "avatar": "sally.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     }
   ],

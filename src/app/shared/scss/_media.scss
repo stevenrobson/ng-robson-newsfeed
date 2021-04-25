@@ -1,0 +1,104 @@
+.animate.pop-in {
+  animation: popIn 1s both;
+}
+
+.animate.ease-left {
+  animation: easeLeft .4s ease both;
+}
+
+.animate.ease-right {
+  animation: easeRight .2s ease both;
+}
+
+.animate.ease-logo-mobile {
+  animation: easeLogoRight 2s ease both;
+}
+
+.animate.active {
+  animation: fadeActive .1s ease both;
+  animation-delay: .1s;
+}
+.animate.inactive {
+  animation: fadeInactive .2s ease both;
+  animation-delay: .1s;
+}
+
+@keyframes fadeActive {
+  0% {
+    opacity: 1;
+    background-color: transparent;
+  }
+
+  100% {
+    opacity: 1;
+    background-color: #00aeff;
+  }
+}
+
+@keyframes fadeInctive {
+  0% {
+    opacity: 1;
+    background-color: #00aeff;
+  }
+
+  100% {
+    opacity: 1;
+    background-color: transparent;
+  }
+}
+
+@keyframes easeLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(5em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(.65em);
+  }
+}
+
+@keyframes easeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(.65em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(2.5em);
+  }
+}
+
+@keyframes easeLogoRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(40px);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  80% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,40 @@
+.container {
+  // margin: .75em;
+  // width: 800px;
+}
+
+.container.desktop {
+  max-width: 50vw;
+}
+
+.user-banner {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 50px auto;
+}
+
+.feed-container {
+  // width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  grid-column: 1;
+  border: 1px solid rgb(112, 112, 112);
+}
+
+.username {
+  grid-column: 2;
+  top: 8px;
+  position: relative;
+}
+
+@media screen and (min-width: 660px) {
+
+  .feed-container {
+    padding: 10px 30px 10px 10px;
+  }
+}
