@@ -1,4 +1,7 @@
+import { HttpResponse, HttpResponseBase } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +11,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'UpkeyNewsfeed';
 
-  constructor() {
+  httpStatus: number;
+  httpResponseBase: Observable<HttpResponse<object>>;
+
+  constructor(private api: ApiService) {
+
+    this.httpResponseBase = this.api.GetServiceState();
+
   }
 
 }

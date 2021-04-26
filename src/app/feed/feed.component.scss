@@ -6,7 +6,6 @@
 }
 
 .feed-card {
-  // max-width: 400px;
   background-color: white;
 
   mat-card-header {
@@ -30,17 +29,22 @@
       position: relative;
     }
 
-
-
   }
 
-}
+  mat-icon-button {
+    background-color: transparent;
+  }
 
-button {
-  color: white;
-  background-color:  #00aeff;
+  // .icon-button {
+  //   transition-duration: .5s;
+  //   transform: scale(1);
+  // }
+  // .icon-button:hover {
+  //   transition-duration: .5s;
+  //   transform: scale(1.5);
+  // }
+
 }
-button:hover { transform: scale(1.08); }
 
 mat-card-content {
   font-size: 18px;

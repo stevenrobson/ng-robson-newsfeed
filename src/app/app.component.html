@@ -1,16 +1,14 @@
 <div class="root-container">
   <header></header>
   <nav></nav>
-  <div class="root-content">
+  <div class="root-content" *ngIf="(httpResponseBase | async)?.status === 200">
     <router-outlet></router-outlet>
   </div>
   <footer></footer>
 </div>
 
-<!-- <div class="root-container">
-  <header></header>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
-  <footer></footer>
-</div> -->
+<div class="json-server-error" *ngIf="(httpResponseBase | async)?.status !== 200">
+  <h1>Json-Server not detected!</h1>
+  <p>To start the api server run the below npm script from the project directory and then refresh the application.</p>
+  <p class="npm">npm run json:server</p>
+</div>

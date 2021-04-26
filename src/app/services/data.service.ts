@@ -1,6 +1,5 @@
-import { Injectable, ɵCodegenComponentFactoryResolver } from '@angular/core';
-import { Observable } from 'rxjs';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Favorite } from '../shared/favorite';
 import { Feed } from '../shared/feed';
@@ -10,6 +9,20 @@ import { User } from '../shared/user';
   providedIn: 'root'
 })
 export class DataService {
+
+  public logonUserId = 4;
+
+  private logonUser: BehaviorSubject<User> = new BehaviorSubject<User>(undefined);
+  public logonUser$ = this.logonUser.asObservable();
+
+  // refactor out to rely only on logonUserFavorite$ @ line 24
+  private logonUserFavorites: BehaviorSubject<number[]> = new BehaviorSubject<number[]>(undefined);
+  public logonUserFavorites$ = this.logonUserFavorites.asObservable();
+
+  private logonUserFavorite: BehaviorSubject<Favorite[]> = new BehaviorSubject<Favorite[]>(undefined);
+  public logonUserFavorite$ = this.logonUserFavorite.asObservable();
+
+  public loggedOnUser: User;
 
   private selectedUser: BehaviorSubject<User> = new BehaviorSubject<User>(undefined);
   public selectedUser$ = this.selectedUser.asObservable();
@@ -21,6 +34,38 @@ export class DataService {
   public allFeeds$ = this.allFeeds.asObservable();
 
   constructor() { }
+
+  getUser(id: number): Observable<User> {
+    return this.allUsers$.pipe(
+      map(usrs => usrs.find(user => user.id === id)));
+  }
+
+  setSelected(user: User): User {
+    user = this.processUser(user);
+    this.selectedUser.next(user);
+    return user;
+  }
+
+  setLogonUser(user: User): User {
+    user = this.processUser(user);
+    this.loggedOnUser = user;
+    let faves: any[] = [];
+    user.favorites.forEach(fav => { faves.push(fav.feedId); });
+    this.logonUserFavorites.next(faves);
+    this.logonUser.next(user);
+    return user;
+  }
+
+  setLogonUserFavorites(favorites: Favorite[]) {
+    let faves: number[] = [];
+    favorites.forEach(fav => { faves.push(fav.feedId); });
+    this.logonUserFavorite.next(favorites);
+    this.logonUserFavorites.next(faves);
+  }
+
+  getLogonUserFavorites(): Favorite[] {
+    return this.logonUserFavorite.getValue();
+  }
 
   setSelectedUser(user: User, feeds: Feed[], favorites: Favorite[]): User {
     user.feeds = feeds;
@@ -35,18 +80,13 @@ export class DataService {
   }
 
   setAllUsers(users: User[]): void {
-
-    users.forEach(user => {
-      console.log('setAllUsers', user.id);
-      // user = this.processUser(user);
-    })
-
     this.allUsers.next(users);
   }
 
 
   setAllFeeds(feeds: Feed[]): Feed[] {
-    feeds = this.processFeeds(feeds);
+    feeds.forEach(feed => feed.date = new Date(feed.date));
+    feeds = this.sortFeedsByDate(feeds);
     this.allFeeds.next(feeds);
     return feeds;
   }
@@ -59,8 +99,6 @@ export class DataService {
   }
 
   public processUser(user: User): User {
-    console.log(`processUser: ${user.firstName} ${user.lastName} with ${user.feeds.length} feeds`);
-
     // convert date strings to dates, flag favorites,
     user.feeds = this.processFeeds(user.feeds, user.favorites);
 

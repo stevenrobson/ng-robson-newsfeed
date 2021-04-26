@@ -1,34 +1,43 @@
-<!-- <section class="feed-container">
-  <pre>{{ feed?.id }}</pre>
-  <label style="color: red">{{ feed.title }}</label>
-  <p>{{ feed.content }}</p>
-  <pre>{{ feed.date }}</pre>
-  <div *ngIf="feed.favorite === true" style="color: blueviolet">FAVORITE</div>
-</section> -->
-
-<!-- <pre>{{(userOut | async) | json }}</pre> -->
-
 <mat-card class="feed-card mat-elevation-z2">
   <mat-card-header>
     <img
       class="avatar"
       src="../assets/images/{{ (userOut | async)?.firstName | lowercase }}.png"
-      alt=""
+      alt="..."
     />
+    <!-- <img class="avatar" [src]="pic" (error)="setDefaultPic()"> -->
     <div class="header">
       <mat-card-title
-        >{{ (userOut | async)?.firstName }}
-        {{ (userOut | async)?.lastName }}</mat-card-title
-      >
-      <mat-card-subtitle>{{ feed.title }}</mat-card-subtitle>
+        >{{ (userOut | async)?.firstName }} {{ (userOut | async)?.lastName }}
+      </mat-card-title>
+      <mat-card-subtitle
+        >{{ feed.title }} <span>({{ feed.id }})</span>
+      </mat-card-subtitle>
     </div>
   </mat-card-header>
 
   <mat-card-content>
     <p>{{ feed.content }}</p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+
+  <mat-card-actions *ngIf="logonUserFavorites$ | async">
+
+    <button mat-icon-button class="icon-button" color="warn"
+    *ngIf="(logonUserFavorites$ | async).includes(feed.id)"
+    (click)="clickUnlike(feed.id)">
+      <mat-icon>favorite</mat-icon>
+    </button>
+
+    <button mat-icon-button class="icon-button"
+    *ngIf="!(logonUserFavorites$ | async).includes(feed.id)"
+    (click)="clickLike(feed.id)">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+
+    <button mat-icon-button class="icon-button"
+    (click)="shareFeed(feed)">
+      <mat-icon>share</mat-icon>
+    </button>
+
   </mat-card-actions>
 </mat-card>

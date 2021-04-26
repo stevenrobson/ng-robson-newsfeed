@@ -4,7 +4,6 @@
   "scripts": {
     "ng": "ng",
     "json:server": "json-server --watch api/db.json",
-    "json:server:test": "json-server --watch api/many.json",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",

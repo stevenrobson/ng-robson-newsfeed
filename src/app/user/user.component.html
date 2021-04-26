@@ -1,31 +1,20 @@
-<div class="container">
+<!-- could use this component to display more than just feeds for this user -->
 
-  <ng-container *ngIf="(allUsers | async)">
-    <div *ngFor="let user of (allUsers | async)">
-      <section class="feed-container" *ngFor="let feed of user.feeds">
-        <!-- <div class="user-banner">
-          <img
-            class="avatar"
-            src="../assets/images/{{ user.firstName | lowercase }}.png"
-            alt=""
-          />
-          <span class="username">{{ user.firstName }} {{ user.lastName }}</span>
-        </div> -->
-        <app-feed [feed]="feed" [userOut]="userOut"></app-feed>
-      </section>
-      <hr />
-    </div>
+<div class="container">
+  <ng-container *ngIf="allUsers | async">
+
+    <section class="feed-container" *ngFor="let feed of (allFeeds | async)">
+      <app-feed  [feed]="feed" [userOut]="getUser(feed.userId)"></app-feed>
+    </section>
+
   </ng-container>
 
-  <section class="feed-container" *ngFor="let feed of (user | async)?.feeds">
-    <!-- <div class="user-banner">
-      <img
-        class="avatar"
-        src="../assets/images/{{ (user | async)?.firstName | lowercase }}.png"
-        alt=""
-      />
-      <span class="username">{{ (user | async)?.firstName }} {{ (user | async)?.lastName }}</span>
-    </div> -->
-    <app-feed [feed]="feed" [userOut]="userOut"></app-feed>
-  </section>
+
+  <ng-container *ngIf="!(allUsers | async)">
+
+    <section class="feed-container" *ngFor="let feed of (user | async)?.feeds">
+      <app-feed *ngIf="feed.id !== undefined" [feed]="feed" [userOut]="userOut"></app-feed>
+    </section>
+
+  </ng-container>
 </div>

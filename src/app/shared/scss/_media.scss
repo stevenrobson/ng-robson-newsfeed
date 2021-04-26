@@ -2,14 +2,6 @@
   animation: popIn 1s both;
 }
 
-.animate.ease-left {
-  animation: easeLeft .4s ease both;
-}
-
-.animate.ease-right {
-  animation: easeRight .2s ease both;
-}
-
 .animate.ease-logo-mobile {
   animation: easeLogoRight 2s ease both;
 }
@@ -35,7 +27,7 @@
   }
 }
 
-@keyframes fadeInctive {
+@keyframes fadeInactive {
   0% {
     opacity: 1;
     background-color: #00aeff;
@@ -44,30 +36,6 @@
   100% {
     opacity: 1;
     background-color: transparent;
-  }
-}
-
-@keyframes easeLeft {
-  0% {
-    opacity: 1;
-    transform: translateX(5em);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(.65em);
-  }
-}
-
-@keyframes easeRight {
-  0% {
-    opacity: 0;
-    transform: translateX(.65em);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(2.5em);
   }
 }
 

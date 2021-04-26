@@ -22,7 +22,7 @@ header {
 
 .root-container {
   display: grid;
-  grid-template-columns: 0,100vw,0;
+  grid-template-columns: 0 100vw 0;
   position: relative;
   max-width: 100vw;
   min-width: 100vw;
@@ -32,25 +32,39 @@ header {
   overflow-x: hidden;
 }
 
+.json-server-error {
+  display: grid;
+  align-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 75vh;
+
+  h1 {
+    color: red;
+  }
+
+  .npm {
+    color: blue;
+    font-size: xx-large;
+  }
+}
+
 footer {
   grid-column: 3;
 }
 
 @media screen and (min-width: 959px) {
-
   .root-container {
-    grid-template-columns: 1fr,960,1fr;
+    grid-template-columns: 1fr 960 1fr;
     max-width: 960px;
     min-width: 960px;
   }
 }
 
 @media screen and (min-width: 1279px) {
-
   .root-container {
-    grid-template-columns: 1fr,1280,1fr;
+    grid-template-columns: 1fr 1280 1fr;
     max-width: 1280px;
     min-width: 1280px;
   }
-
 }
