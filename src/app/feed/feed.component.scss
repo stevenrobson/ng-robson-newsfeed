@@ -1,0 +1,102 @@
+
+
+.feed-card {
+  background-color: white;
+  padding: 16px 16px 0px 16px;
+
+  .friended {
+    font-size: small;
+  }
+
+  mat-card-header {
+    display: grid;
+    align-content: center;
+    grid-template-columns: 50px auto;
+
+    .avatar {
+      display: grid;
+      align-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      grid-column: 1;
+      border: 1px solid rgb(112, 112, 112);
+    }
+
+    .header {
+      grid-column: 2;
+      top: 8px;
+      position: relative;
+    }
+  }
+
+  mat-card-header.friended {
+    display: none;
+  }
+
+  mat-icon-button {
+    background-color: transparent;
+  }
+
+  mat-card-actions.friended button {
+    // display:none;
+  }
+
+
+
+  // .icon-button {
+  //   transition-duration: .5s;
+  //   transform: scale(1);
+  // }
+  // .icon-button:hover {
+  //   transition-duration: .5s;
+  //   transform: scale(1.5);
+  // }
+}
+
+.image-post {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+mat-card-content {
+  font-size: 18px;
+
+  .attribution {
+    text-align: right;
+    font-size: x-small;
+  }
+}
+
+mat-card-actions {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+}
+
+mat-card-actions.friended {
+  // display: grid;
+  // grid-template-columns: 1fr;
+}
+
+.date {
+  text-align: right;
+  font-size: x-small;
+  color: rgb(0 0 0 / 25%);
+  align-self: end;
+}
+
+@media screen and (min-width: 660px) {
+  .feed-container {
+    padding: 10px 10px 10px 10px;
+  }
+}
+
+@media screen and (min-width: 959px) {
+
+}
+
+@media screen and (min-width: 1279px) {
+
+}

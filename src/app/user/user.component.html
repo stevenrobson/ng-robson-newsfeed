@@ -1,14 +1,20 @@
-<p>{{ (user | async)?.firstName }} {{ (user | async)?.lastName }}</p>
+<!-- could use this component to display more than just feeds for this user -->
 
-<div *ngIf="allUsers | async">
-  <div *ngFor="let user of (allUsers | async)">
-    <div *ngFor="let feed of user.feeds">
-      <app-feed [feed]="feed"></app-feed>
-    </div>
-    <hr>
-  </div>
-</div>
+<div class="container">
+  <ng-container *ngIf="allUsers | async">
 
-<div *ngFor="let feed of (user | async)?.feeds">
-  <app-feed [feed]="feed"></app-feed>
+    <section class="feed-container" *ngFor="let feed of (allFeeds | async)">
+      <app-feed  [feed]="feed" [userOut]="getUser(feed.userId)"></app-feed>
+    </section>
+
+  </ng-container>
+
+
+  <ng-container *ngIf="!(allUsers | async)">
+
+    <section class="feed-container" *ngFor="let feed of (user | async)?.feeds">
+      <app-feed *ngIf="feed.id !== undefined" [feed]="feed" [userOut]="userOut"></app-feed>
+    </section>
+
+  </ng-container>
 </div>
