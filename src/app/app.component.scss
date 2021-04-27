@@ -22,7 +22,7 @@ header {
 
 .root-container {
   display: grid;
-  grid-template-columns: 0 100vw 0;
+  grid-template-columns: 1fr 100% 1fr;
   position: relative;
   max-width: 100vw;
   min-width: 100vw;
@@ -35,9 +35,10 @@ header {
 .json-server-error {
   display: grid;
   align-content: center;
-  text-align: center;
-  width: 100vw;
-  height: 75vh;
+  margin: auto;
+  width: 40%;
+  height: 85vh;
+  opacity: 0;
 
   h1 {
     color: red;
@@ -51,6 +52,12 @@ header {
 
 footer {
   grid-column: 3;
+}
+
+.server-status {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media screen and (min-width: 959px) {

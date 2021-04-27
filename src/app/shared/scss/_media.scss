@@ -3,16 +3,31 @@
 }
 
 .animate.ease-logo-mobile {
-  animation: easeLogoRight 2s ease both;
+  animation: easeLogoLeft 2s ease both;
 }
 
 .animate.active {
-  animation: fadeActive .1s ease both;
-  animation-delay: .1s;
+  animation: fadeActive 0.1s ease both;
+  animation-delay: 0.1s;
 }
 .animate.inactive {
-  animation: fadeInactive .2s ease both;
-  animation-delay: .1s;
+  animation: fadeInactive 0.2s ease both;
+  animation-delay: 0.1s;
+}
+
+.animate.fadeIn {
+  animation: fadeIn 1.5s ease-in;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeActive {
@@ -39,7 +54,7 @@
   }
 }
 
-@keyframes easeLogoRight {
+@keyframes easeLogoLeft {
   0% {
     opacity: 0;
     transform: translateX(100px);
@@ -47,7 +62,7 @@
 
   100% {
     opacity: 1;
-    transform: translateX(40px);
+    transform: translateX(0px);
   }
 }
 

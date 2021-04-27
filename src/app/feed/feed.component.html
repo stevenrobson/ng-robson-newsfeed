@@ -1,5 +1,8 @@
-<mat-card class="feed-card mat-elevation-z2">
-  <mat-card-header>
+<mat-card class="feed-card mat-elevation-z1">
+  <mat-card-header
+    [ngClass]="feed.type"
+    *ngIf="feed.type === 'post' || 'image-post'"
+  >
     <img
       class="avatar"
       src="../assets/images/{{ (userOut | async)?.firstName | lowercase }}.png"
@@ -10,34 +13,50 @@
       <mat-card-title
         >{{ (userOut | async)?.firstName }} {{ (userOut | async)?.lastName }}
       </mat-card-title>
-      <mat-card-subtitle
-        >{{ feed.title }} <span>({{ feed.id }})</span>
-      </mat-card-subtitle>
+      <mat-card-subtitle>{{ feed.title }} </mat-card-subtitle>
     </div>
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content [ngClass]="feed.type //-content">
+    <div class="image-post">
+      <img *ngIf="feed.type === 'image-post'" [src]="feed.image" />
+    </div>
+    <div class="attribution" *ngIf="feed.type === 'image-post'">
+      Random image credit goes to
+      <a href="https://unsplash.com/">Unsplash.com</a>.
+    </div>
     <p>{{ feed.content }}</p>
   </mat-card-content>
 
-  <mat-card-actions *ngIf="logonUserFavorites$ | async">
+  <div class="card-footer">
+    <mat-card-actions
+    [ngClass]="feed.type"
+    >
+      <button
+        mat-icon-button
+        class="icon-button"
+        color="warn"
+        *ngIf="(logonUserFavorites$ | async).includes(feed.id)"
+        (click)="clickUnlike(feed.id)"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
 
-    <button mat-icon-button class="icon-button" color="warn"
-    *ngIf="(logonUserFavorites$ | async).includes(feed.id)"
-    (click)="clickUnlike(feed.id)">
-      <mat-icon>favorite</mat-icon>
-    </button>
+      <button
+        mat-icon-button
+        class="icon-button"
+        *ngIf="!(logonUserFavorites$ | async).includes(feed.id)"
+        (click)="clickLike(feed.id)"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
 
-    <button mat-icon-button class="icon-button"
-    *ngIf="!(logonUserFavorites$ | async).includes(feed.id)"
-    (click)="clickLike(feed.id)">
-      <mat-icon>favorite_border</mat-icon>
-    </button>
+      <button mat-icon-button class="icon-button" (click)="shareFeed(feed)">
+        <mat-icon>share</mat-icon>
+      </button>
 
-    <button mat-icon-button class="icon-button"
-    (click)="shareFeed(feed)">
-      <mat-icon>share</mat-icon>
-    </button>
+      <div class="date">{{ feed.date | date: "medium" }}</div>
+    </mat-card-actions>
 
-  </mat-card-actions>
+  </div>
 </mat-card>

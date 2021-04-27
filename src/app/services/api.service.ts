@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpResponse, HttpResponseBase } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Favorite } from '../shared/favorite';
 import { Feed } from '../shared/feed';
 import { User } from '../shared/user';
@@ -14,7 +15,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  GetServiceState(): Observable<HttpResponse<object>> {
+  GetServiceState(): Observable<HttpResponse<Object>> {
     return this.http.get<HttpResponse<Object>>(`${apiServer}/users`, {observe: 'response'});
   }
 

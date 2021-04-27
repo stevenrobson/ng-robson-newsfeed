@@ -15,6 +15,13 @@
   >
     Upkey<span>Newsfeed</span>
   </div>
+  <div class="spacer"></div>
+  <div class="nav-links" *ngIf="!(isHandset$ | async)">
+    <button mat-button class="about">Home</button>
+    <button mat-button class="contact">Portfolio</button>
+    <button mat-button class="contact">Contact</button>
+    <button mat-button class="contact">Signup</button>
+  </div>
 </nav>
 
 <div class="container">
@@ -67,10 +74,8 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content class="mat-sidenav-content">
-
       <app-user *ngIf="!showAllFeeds" [user]="selectedUser$"></app-user>
       <app-user *ngIf="showAllFeeds" [allUsers]="allUsers$"></app-user>
-
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

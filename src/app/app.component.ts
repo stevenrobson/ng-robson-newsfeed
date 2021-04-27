@@ -1,6 +1,6 @@
 import { HttpResponse, HttpResponseBase } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ApiService } from './services/api.service';
 
 @Component({
@@ -11,12 +11,20 @@ import { ApiService } from './services/api.service';
 export class AppComponent {
   title = 'UpkeyNewsfeed';
 
-  httpStatus: number;
-  httpResponseBase: Observable<HttpResponse<object>>;
+  private serverStatus: BehaviorSubject<HttpResponse<Object>> = new BehaviorSubject<HttpResponse<Object>>(null);
+  public serverStatus$ = this.serverStatus.asObservable();
+  httpStatusCode: Observable<HttpResponse<Object>>;
+  httpStatus: HttpResponse<Object>;
 
   constructor(private api: ApiService) {
 
-    this.httpResponseBase = this.api.GetServiceState();
+    // this.api.GetServiceState().subscribe(status =>
+    //   this.httpStatus = status,
+    //   (error: Error) => { console.warn(error) },
+    //   () => {console.log('server status', this.httpStatus); this.serverStatus.next(this.httpStatus)}
+    // );
+
+    this.httpStatusCode = this.api.GetServiceState();
 
   }
 

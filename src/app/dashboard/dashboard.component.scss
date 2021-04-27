@@ -1,14 +1,21 @@
 nav {
   display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
   position: fixed;
   align-content: center;
-  z-index: 10000;
+  z-index: 10;
   background-color: #fff;
   border-bottom: 1px solid rgb(200, 200, 200);
   color: #000;
   height: 54px;
-  width: 100vw;
+  width: 1280px;
+  .btn.menu {
+    grid-column: 1;
+    background-color: transparent;
+    align-self: center;
+  }
   .logo {
+    grid-column: 2;
     position: absolute;
     top: 8px;
     left: 0.25em;
@@ -17,9 +24,20 @@ nav {
       color: #00aeff;
     }
   }
-  .btn.menu {
-    background-color: transparent;
+
+  .nav-links {
+    grid-column: 3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    mat-button {
+      margin-left: 140px;
+    }
   }
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .container {
@@ -71,7 +89,9 @@ mat-sidenav {
   }
 }
 
-div.hover-highlight:hover { background-color: #9ce0ff; }
+div.hover-highlight:hover {
+  background-color: #9ce0ff;
+}
 
 div.btn {
   display: grid;
@@ -98,5 +118,17 @@ div.btn {
     position: relative;
     align-content: center;
     vertical-align: middle;
+  }
+}
+
+@media screen and (min-width: 959px) {
+  .nav {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .nav {
+    width: 1280px;
   }
 }
