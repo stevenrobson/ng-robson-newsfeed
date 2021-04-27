@@ -13,30 +13,40 @@ const apiServer = 'http://localhost:3000';
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  httpHeaders: HttpHeaders;
+
+  constructor(private http: HttpClient) {
+    this.httpHeaders = new HttpHeaders().set(
+      "Authorization", this.getAuth0()
+    )
+  }
+
+  getAuth0(): string {
+    return 'kjsdhfkjlsdahfjklshadlkjfhsadgf';
+  }
 
   GetServiceState(): Observable<HttpResponse<Object>> {
     return this.http.get<HttpResponse<Object>>(`${apiServer}/users`, {observe: 'response'});
   }
 
   GetUser(userId: number): Observable<User> {
-    return this.http.get<User>(`${apiServer}/users/${userId}`);
+    return this.http.get<User>(`${apiServer}/users/${userId}`, {headers:this.httpHeaders});
   }
 
   GetAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${apiServer}/users`);
+    return this.http.get<User[]>(`${apiServer}/users`, {headers:this.httpHeaders});
   }
 
   GetUserFeeds(userId: number): Observable<Feed[]> {
-    return this.http.get<Feed[]>(`${apiServer}/feeds?userId=${userId}`);
+    return this.http.get<Feed[]>(`${apiServer}/feeds?userId=${userId}`, {headers:this.httpHeaders});
   }
 
   GetAllFeeds(): Observable<Feed[]> {
-    return this.http.get<Feed[]>(`${apiServer}/feeds`);
+    return this.http.get<Feed[]>(`${apiServer}/feeds`, {headers:this.httpHeaders});
   }
 
   GetUserFavorites(userId: number): Observable<Favorite[]> {
-    let faves = this.http.get<Favorite[]>(`${apiServer}/favorites?userId=${userId}`);
+    let faves = this.http.get<Favorite[]>(`${apiServer}/favorites?userId=${userId}`, {headers:this.httpHeaders});
     return faves;
   }
 
@@ -52,7 +62,8 @@ export class ApiService {
     const httpOptions = {
       headers: new HttpHeaders({
         token: 'some_token',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        "Authorization": this.getAuth0()
       })
     }
 
@@ -66,7 +77,8 @@ export class ApiService {
     const httpOptions = {
       headers: new HttpHeaders({
         token: 'some_token',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        "Authorization": this.getAuth0()
       })
     }
 
