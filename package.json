@@ -4,7 +4,6 @@
   "scripts": {
     "ng": "ng",
     "json:server": "json-server --watch api/db.json",
-    "json:server:test": "json-server --watch api/many.json",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -14,10 +13,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.2.4",
+    "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.2.4",
     "@angular/compiler": "~10.2.4",
     "@angular/core": "~10.2.4",
     "@angular/forms": "~10.2.4",
+    "@angular/material": "^10.2.7",
     "@angular/platform-browser": "~10.2.4",
     "@angular/platform-browser-dynamic": "~10.2.4",
     "@angular/router": "~10.2.4",

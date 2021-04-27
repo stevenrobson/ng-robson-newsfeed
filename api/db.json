@@ -4,7 +4,7 @@
     "userId": 4,
     "firstName": "Steve",
     "lastName": "Robson",
-    "avatar": "angular",
+    "avatar": "steve.png",
     "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
   },
   "users": [
@@ -12,35 +12,35 @@
       "id": 1,
       "firstName": "Jane",
       "lastName": "Doe",
-      "avatar": "moon",
+      "avatar": "jane.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 2,
       "firstName": "Jack",
       "lastName": "Johnston",
-      "avatar": "sun",
+      "avatar": "jack.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 3,
       "firstName": "Bob",
       "lastName": "Rossin",
-      "avatar": "easel",
+      "avatar": "bob.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 4,
       "firstName": "Steve",
       "lastName": "Robson",
-      "avatar": "angular",
+      "avatar": "steve.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     },
     {
       "id": 5,
       "firstName": "Sally",
       "lastName": "Meadows",
-      "avatar": "rainbow",
+      "avatar": "sally.png",
       "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam temporibus fugit vero maiores, quisquam sequi!"
     }
   ],
@@ -57,7 +57,7 @@
     {
       "id": 2,
       "userId": 1,
-      "date": "01/18/2021 05:13:14 PM",
+      "date": "01/12/2021 05:13:14 PM",
       "type": "post",
       "title": "Accusamus, in ipsam",
       "image": "",
@@ -111,7 +111,7 @@
     {
       "id": 8,
       "userId": 2,
-      "date": "01/18/2021 02:01:00 PM",
+      "date": "01/13/2021 08:01:00 AM",
       "type": "post",
       "title": "Accusamus, in ipsam",
       "image": "",
@@ -192,11 +192,11 @@
     {
       "id": 17,
       "userId": 3,
-      "date": "01/24/2021 01:41:54 PM",
-      "type": "post",
-      "title": "Aliquam dolor obcaecati!",
-      "image": "",
-      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
+      "date": "01/14/2021 01:41:54 PM",
+      "type": "image-post",
+      "title": "So serene!",
+      "image": "https://source.unsplash.com/random/800x600?nature,water",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam!"
     },
     {
       "id": 18,
@@ -220,9 +220,9 @@
       "id": 20,
       "userId": 4,
       "date": "02/01/2021 01:37:41 AM",
-      "type": "post",
-      "title": "Angular, in ipsam",
-      "image": "",
+      "type": "image-post",
+      "title": "Angular is fun!",
+      "image": "https://source.unsplash.com/random/800x600?applicaction,programmer",
       "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
     },
     {
@@ -274,18 +274,18 @@
       "id": 26,
       "userId": 5,
       "date": "03/29/2021 07:44:31 AM",
-      "type": "post",
+      "type": "image-post",
       "title": "Strawberry Fields...",
-      "image": "",
+      "image": "https://source.unsplash.com/random/800x600?strawberry,strawberries",
       "content": "Lorem ipsum dolor forever, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
     },
     {
       "id": 27,
       "userId": 5,
       "date": "04/20/2021 03:28:20 PM",
-      "type": "post",
-      "title": "Accusamus, in ipsam",
-      "image": "",
+      "type": "image-post",
+      "title": "The Expanse!",
+      "image": "https://source.unsplash.com/random/800x600?astronomy,space",
       "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, in ipsam? Similique rerum consequuntur cumque reprehenderit aliquam dolor obcaecati. Ad perspiciatis nulla ipsa dolorum et minus magnam laudantium corporis commodi!"
     },
     {
@@ -376,6 +376,36 @@
       "userId": 5,
       "feedId": 30,
       "active": true
+    },
+    {
+      "id": 9,
+      "userId": 4,
+      "feedId": 1,
+      "active": true
+    },
+    {
+      "userId": 4,
+      "feedId": 5,
+      "active": true,
+      "id": 14
+    },
+    {
+      "userId": 4,
+      "feedId": 2,
+      "active": true,
+      "id": 15
+    },
+    {
+      "userId": 4,
+      "feedId": 28,
+      "active": true,
+      "id": 16
+    },
+    {
+      "userId": 4,
+      "feedId": 15,
+      "active": true,
+      "id": 17
     }
   ]
 }
