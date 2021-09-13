@@ -1,4 +1,6 @@
-# UpkeyNewsfeed
+# ngRobsonNewsfeed
+
+This project was originally developed as part of an interview process. I had a lot of fun with and so here it will rest.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
 
