@@ -391,12 +391,6 @@
     },
     {
       "userId": 4,
-      "feedId": 2,
-      "active": true,
-      "id": 15
-    },
-    {
-      "userId": 4,
       "feedId": 28,
       "active": true,
       "id": 16
@@ -406,6 +400,18 @@
       "feedId": 15,
       "active": true,
       "id": 17
+    },
+    {
+      "userId": 4,
+      "feedId": 2,
+      "active": true,
+      "id": 18
+    },
+    {
+      "userId": 4,
+      "feedId": 20,
+      "active": true,
+      "id": 19
     }
   ]
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "UpkeyNewsfeed": {
+    "RobsonNewsfeed": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/UpkeyNewsfeed",
+            "outputPath": "dist/RobsonNewsfeed",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "UpkeyNewsfeed:build"
+            "browserTarget": "RobsonNewsfeed:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "UpkeyNewsfeed:build:production"
+              "browserTarget": "RobsonNewsfeed:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "UpkeyNewsfeed:build"
+            "browserTarget": "RobsonNewsfeed:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "UpkeyNewsfeed:serve"
+            "devServerTarget": "RobsonNewsfeed:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "UpkeyNewsfeed:serve:production"
+              "devServerTarget": "RobsonNewsfeed:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "UpkeyNewsfeed"
+  "defaultProject": "RobsonNewsfeed"
 }

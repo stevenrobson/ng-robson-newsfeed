@@ -9,7 +9,7 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'UpkeyNewsfeed';
+  title = 'RobsonNewsfeed';
 
   private serverStatus: BehaviorSubject<HttpResponse<Object>> = new BehaviorSubject<HttpResponse<Object>>(null);
   public serverStatus$ = this.serverStatus.asObservable();
